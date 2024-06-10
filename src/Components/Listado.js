@@ -4,7 +4,7 @@ export const Listado = () => {
 
   /** Estado para poner peliculas en el componente */
 
-  const [listadoState, setListadoState] = useState('');
+  const [listadoState, setListadoState] = useState([]);
 
   /*Metodo Conseguir Peliculas */
   const conseguirPeliculas = () => 
@@ -22,13 +22,17 @@ export const Listado = () => {
     console.log('Componente del listado de peliculas cargado!')
   },[]);
   return (
-    <>
-            <article className="peli-item">
-                <h3 className="title">Desarrollo Web</h3>
-                <p className="description">una pelicula</p>
+    <>                
+            {listadoState.map(peli =>{
+              return (
+              <article className="peli-item">
+                <h3 className="title">{peli.titulo}</h3>
+                <p className="description">{peli.descripcion}</p>
                 <button className="edit">Editar</button>
                 <button className="delete">Borrar</button>
-            </article>
+            </article>)
+            })}
+            
             
     
     
