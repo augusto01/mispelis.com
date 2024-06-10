@@ -6,7 +6,6 @@ export const Buscador = () => {
                 <h3 className="title">Buscador</h3>
                 <form action="">
                   <input type='text' placeholder='Ingresa una pelicula'></input>
-
                     <button>Buscar</button>
                 </form>
 
