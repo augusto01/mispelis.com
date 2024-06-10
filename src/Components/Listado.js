@@ -25,7 +25,7 @@ export const Listado = () => {
     <>                
             {listadoState.map(peli =>{
               return (
-              <article className="peli-item">
+              <article key={peli.id} className="peli-item">
                 <h3 className="title">{peli.titulo}</h3>
                 <p className="description">{peli.descripcion}</p>
                 <button className="edit">Editar</button>
