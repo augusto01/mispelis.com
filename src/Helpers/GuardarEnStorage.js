@@ -1,4 +1,4 @@
-export const GuardarEnStorage = peli => {
+export const GuardarEnStorage = (clave, elemento) => {
 
     //conseguir elementos existente 
     let elementos = JSON.parse(localStorage.getItem('pelis'));
@@ -7,15 +7,15 @@ export const GuardarEnStorage = peli => {
     //comprobar si es un array 
     if (Array.isArray(elementos)){
       //añadir elemento nuevo 
-      elementos.push(peli);
+      elementos.push(elemento);
     }else{
-      elementos = [peli];
+      elementos = [elemento];
     }
 
     console.log(elementos)
 
     //guardar en el local storage
-    localStorage.setItem('pelis',JSON.stringify(elementos))
+    localStorage.setItem(clave,JSON.stringify(elementos))
     //devolver el objeto
-    return peli;
+    return elemento;
   }
