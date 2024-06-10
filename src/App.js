@@ -1,5 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
+import { Buscador } from "./Components/Buscador";
+import { Crear } from "./Components/Crear";
+import { Listado } from "./Components/Listado";
+
 
 function App() {
   return (
@@ -13,59 +15,22 @@ function App() {
 
         <nav className="nav">
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Peliculas</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="/#">Inicio</a></li>
+                <li><a href="/#">Peliculas</a></li>
+                <li><a href="/#">Blog</a></li>
+                <li><a href="/#">Contacto</a></li>
             </ul>
         </nav>
         {/*Contenido Principal*/}
         <section className="content">
-            <article className="peli-item">
-                <h3 className="title">Desarrollo Web</h3>
-                <p className="description">una pelicula</p>
-                <button className="edit">Editar</button>
-                <button className="delete">Borrar</button>
-            </article>
-            <article className="peli-item">
-                <h3 className="title">Desarrollo Web</h3>
-                <p className="description">una pelicula</p>
-                <button className="edit">Editar</button>
-                <button className="delete">Borrar</button>
-            </article>
-            <article className="peli-item">
-                <h3 className="title">Desarrollo Web</h3>
-                <p className="description">una pelicula</p>
-                <button className="edit">Editar</button>
-                <button className="delete">Borrar</button>
-            </article>
-
-            <article className="peli-item">
-                <h3 className="title">Desarrollo Web</h3>
-                <p className="description">una pelicula</p>
-                <button className="edit">Editar</button>
-                <button className="delete">Borrar</button>
-            </article>
+           <Listado></Listado>
         </section>
+        
 
         <aside className="lateral">
-            <div className="search">
-                <h3 className="title">Buscador</h3>
-                <form action="">
-                  <input type='text' placeholder='Ingresa una pelicula'></input>
-
-                    <button>Buscar</button>
-                </form>
-
-            </div>
-
-            <div classNameName="add">
-                <h3 className="title">Añadir Pelicula</h3>
-                <form action="">               
-                    <textarea name="" id="" placeholder="Descripcion"></textarea>
-                    <button>Guardar</button>
-                </form>
-            </div>
+                <Buscador></Buscador>
+                <Crear></Crear>
+            
         </aside>
 
         <footer className="footer">

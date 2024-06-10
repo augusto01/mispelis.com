@@ -99,6 +99,7 @@ body{
 
 button, input[type = 'sumbit']
       input[type = 'button']{
+          margin-left: 7px;
           width: 100px;
           margin-top: 15px;
           text-transform: capitalize;
@@ -113,10 +114,15 @@ button, input[type = 'sumbit']
           padding: 15px;
           border-radius: 3px;
       }
-
+      
 .peli-item .edit:hover{
   background: #e77b00;
 
+
+  .peli-item .edit{
+    margin-left: 4px;
+  
+  }
 }
 
 .peli-item .delete:hover{
