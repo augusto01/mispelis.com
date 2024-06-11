@@ -4,7 +4,7 @@ export const Listado = ({listadoState, setListadoState}) => {
 
   /** Estado para poner peliculas en el componente */
 
-  //const [listadoState, setListadoState] = useState([]);
+
 
   /*Metodo Conseguir Peliculas */
   const conseguirPeliculas = () => 
@@ -13,6 +13,23 @@ export const Listado = ({listadoState, setListadoState}) => {
     setListadoState(peliculas);
 
     console.log(peliculas)
+
+    return peliculas;
+
+  }
+
+  const borrarPeli = (id) => {
+    //conseguir pelis almacenadas
+    let pelis_almacenadas  =  conseguirPeliculas(); 
+
+    //filtrar pelis que no quiero eliminar 
+    let nuevo_array_almacenado = pelis_almacenadas.filter (peli => peli.id !== parseInt(id))
+
+    //ACTUALIZAR ESTADO DEL LISTADO 
+    setListadoState(nuevo_array_almacenado);
+
+    //ACTULIZAR LOCAL STORAGE
+    localStorage.setItem('pelis',JSON.stringify(nuevo_array_almacenado));
 
   }
 
@@ -28,8 +45,9 @@ export const Listado = ({listadoState, setListadoState}) => {
               <article key={peli.id} className="peli-item">
                 <h3 className="title">{peli.titulo}</h3>
                 <p className="description">{peli.descripcion}</p>
+
                 <button className="edit">Editar</button>
-                <button className="delete">Borrar</button>
+                <button onClick={()=>borrarPeli(peli.id)} className="delete">Borrar</button>
             </article>)
             })}
     </>
