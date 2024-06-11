@@ -97,7 +97,7 @@ body{
 
 /*botones del item*/
 
-button, input[type = 'sumbit']
+button, input[type = 'submit']
       input[type = 'button']{
           margin-left: 7px;
           width: 100px;
@@ -115,6 +115,26 @@ button, input[type = 'sumbit']
           border-radius: 3px;
       }
       
+
+/*Boton Editar Formulario*/
+
+.editar{
+  margin-left: 7px;
+          width: 100px;
+          margin-top: 15px;
+          text-transform: capitalize;
+          font-size: 16px;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 300ms;
+          background: linear-gradient(160deg, #03228f, #0b70e1 77%);
+          color: white;
+          border: none;
+          outline: none;
+          padding: 15px;
+          border-radius: 3px;
+
+}
 .peli-item .edit:hover{
   background: #e77b00;
 
@@ -153,7 +173,11 @@ button, input[type = 'sumbit']
 
 .lateral input[type='text'],
 .lateral input[type = 'text'],
-.lateral textarea{
+.lateral textarea
+.edit_form input[type="text"],
+.edit_form input[type="text"],
+.edit_form textarea
+{
   display: block;
   margin: 0 auto;
   margin-top: 15px;
@@ -167,6 +191,10 @@ button, input[type = 'sumbit']
   border-color: transparent;
 }
 
+.edit_form{
+  border-top: 1px solid #ddd;
+  margin-top: 10px;
+}
 
 
 /*Estilos footer*/

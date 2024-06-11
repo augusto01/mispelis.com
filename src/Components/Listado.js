@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { Editar } from './Editar';
 
 export const Listado = ({listadoState, setListadoState}) => {
 
-  /** Estado para poner peliculas en el componente */
+  /** Estado para que aparezca el formulario de editar en el componente */
+  const [flag_editar, setEditar] = useState(0);
 
 
 
@@ -46,8 +48,9 @@ export const Listado = ({listadoState, setListadoState}) => {
                 <h3 className="title">{peli.titulo}</h3>
                 <p className="description">{peli.descripcion}</p>
 
-                <button className="edit">Editar</button>
-                <button onClick={()=>borrarPeli(peli.id)} className="delete">Borrar</button>
+                <button className="edit"   onClick={()=>setEditar(peli.id)}>Editar</button>
+                <button className="delete" onClick={()=>borrarPeli(peli.id)} >Borrar</button>
+                {flag_editar == peli.id && (<Editar/>)}
             </article>)
             })}
     </>
