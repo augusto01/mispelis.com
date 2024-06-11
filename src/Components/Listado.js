@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 
-export const Listado = () => {
+export const Listado = ({listadoState, setListadoState}) => {
 
   /** Estado para poner peliculas en el componente */
 
-  const [listadoState, setListadoState] = useState([]);
+  //const [listadoState, setListadoState] = useState([]);
 
   /*Metodo Conseguir Peliculas */
   const conseguirPeliculas = () => 
@@ -23,7 +23,7 @@ export const Listado = () => {
   },[]);
   return (
     <>                
-            {listadoState.map(peli =>{
+            {listadoState !== null && listadoState.map(peli =>{
               return (
               <article key={peli.id} className="peli-item">
                 <h3 className="title">{peli.titulo}</h3>
@@ -32,10 +32,6 @@ export const Listado = () => {
                 <button className="delete">Borrar</button>
             </article>)
             })}
-            
-            
-    
-    
     </>
   )
 }
