@@ -47,10 +47,9 @@ export const Listado = ({listadoState, setListadoState}) => {
               <article key={peli.id} className="peli-item">
                 <h3 className="title">{peli.titulo}</h3>
                 <p className="description">{peli.descripcion}</p>
-
                 <button className="edit"   onClick={()=>setEditar(peli.id)}>Editar</button>
                 <button className="delete" onClick={()=>borrarPeli(peli.id)} >Borrar</button>
-                {flag_editar == peli.id && (<Editar/>)}
+                {flag_editar == peli.id && (<Editar peli = {peli} conseguirPeliculas = {conseguirPeliculas} setEditar={setEditar} setListadoState= {setListadoState}/>)}
             </article>)
             })}
     </>
