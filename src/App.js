@@ -31,7 +31,7 @@ function App() {
         
 
         <aside className="lateral">
-                <Buscador></Buscador>
+                <Buscador listadoState = {listadoState} setListadoState={setListadoState}/>
                 <Crear setListadoState = {setListadoState} />
             
         </aside>

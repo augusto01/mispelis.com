@@ -196,6 +196,9 @@ button, input[type = 'submit']
   margin-top: 10px;
 }
 
+.no-encontrado{
+  color: red;
+}
 
 /*Estilos footer*/
 
